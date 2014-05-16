@@ -1,0 +1,23 @@
+*vim-help.txt*	 Better navigation within Vim help files
+
+
+			VIM REFERENCE MANUAL	by Barry Arthur
+
+
+                                                                *vim-help*
+vim-help provides several normal-mode maps to ease navigation within
+help files:
+
+o / O		Jump to the next/prior option, e.g.:	'filetype'
+s / S		Jump to the next/prior link, e.g.:	|vim-help-intro|
+t / T		Jump to the next/prior anchor, e.g.:	*vim-help-example-tag*
+q		Close the current help window
+<enter>		Follow link under cursor (equivalent to |ctrl-]|)
+<backspace>	Jump back a tag (equivalent to |ctrl-t|)
+<leader>j/k	Jump to next/prior quickfix entry (equivalent to |:cnext|)
+<ledaer>q	Disable all vim-help maps (handy for editing vim help files)
+
+==============================================================================
+
+Template From: https://github.com/dahu/Area-41/
+ vim:tw=78:ts=8:ft=help:norl:
