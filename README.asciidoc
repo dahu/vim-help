@@ -9,23 +9,27 @@ http://of-vim-and-vigor.blogspot.com/[beverages].
 
 vim-help provides several normal-mode maps to ease navigation within help files.
 
-.Normal Mode Maps
-[caption="",cols="1<m,4<,2>"]
+.Normal Mode Maps Within Help Files
+[caption="",cols="1<m,4<,2>m"]
 |=============================================================================
-|o / O       |Jump to the next/prior option, e.g.: |++\'filetype'++
-|s / S       |Jump to the next/prior link, e.g.:   |++\|vim-help-intro\|++
-|t / T       |Jump to the next/prior anchor, e.g.: |++\*vim-help-example-tag*++
+|o / O       |Jump to the next/prior option, e.g.: |\'filetype'
+|s / S       |Jump to the next/prior link, e.g.:   |\|vim-help-intro\|
+|t / T       |Jump to the next/prior anchor, e.g.: |\*vim-help-example-tag*
 |q           |Close the current help window        |
-|<enter>     |Follow link under cursor (equivalent to ++ctrl-]++) |
-|<backspace> |Jump back a tag (equivalent to ++ctrl-t++) |
+|<enter>     |Follow link under cursor (equivalent to ++ctrl-]++)                   |
+|<backspace> |Jump back a tag (equivalent to ++ctrl-t++)                            |
 |<leader>j/k |Jump to next/prior quickfix entry (equivalent to +:cnext+ / +:cprev+) |
-|<ledaer>q   |Disable all vim-help maps (handy for editing vim help files) |
+|<ledaer>q   |Disable all vim-help maps (handy for editing vim help files)          |
 |=============================================================================
 
 Additionally, vim-help sets the following global maps:
 
-+<F1>+		Prepare to open +:help+ on the word under the cursor.
-+<shift-F1>+	Jump back to prior help location. 
+.Global Normal Mode Maps
+[caption="",cols="1<m,4<"]
+|=============================================================================
+|<F1>       | Prepare to open +:help+ on the word under the cursor.
+|<shift-F1> | Jump back to prior help location. 
+|=============================================================================
 
 NOTE: Jump to prior help location only works if you have
 https://github.com/dahu/MarkMyWords[MarkMyWords] installed.
