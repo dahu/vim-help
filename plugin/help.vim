@@ -50,7 +50,7 @@ endfunction
 " Moves the cursor to the beginning of the term for contextual markup.
 " (:help help-context)
 
-nnoremap <plug>HelpWord :help <c-r>=expand_help_word()<cr><c-b><c-right><right>
+nnoremap <plug>HelpWord :help <c-r>=<sid>expand_help_word()<cr><c-b><c-right><right>
 
 if !hasmapto('<plug>HelpWord')
   nmap <unique> <f1> <plug>HelpWord
