@@ -15,7 +15,7 @@ q		Close the current help window
 <enter>		Follow link under cursor (equivalent to |ctrl-]|)
 <backspace>	Jump back a tag (equivalent to |ctrl-t|)
 <leader>j/k	Jump to next/prior quickfix entry (equivalent to |:cnext|)
-<ledaer>q	Disable all vim-help maps (handy for editing vim help files)
+<leader>q	Disable all vim-help maps (handy for editing vim help files)
 
 Additionally, vim-help sets the following global maps:
 
