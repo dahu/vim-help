@@ -1,9 +1,8 @@
 " Vim filetype plugin.
 " Language:	help
 " Maintainer:	Barry Arthur <barry.arthur@gmail.com>
-" Version:	0.1
+" Version:	0.2
 " Description:	Navigation mappings for Vim help files
-" Last Change:	2014-06-14
 " License:	Vim License (see :help license)
 " Location:	ftplugin/help.vim
 " Website:	https://github.com/dahu/vim-help
@@ -28,6 +27,8 @@ set cpo&vim
 " Restore things when changing filetype.
 let b:undo_ftplugin = "setlocal spell<"
 set nospell
+
+
 
 " Disable help maps - good for editing help files {{{1
 

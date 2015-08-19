@@ -1,9 +1,8 @@
-" Vim global plugin for better help invocation
+" Vim global plugin for better help invocation & navigation
 " Maintainer:	Barry Arthur <barry.arthur@gmail.com>
-" Version:	0.1
+" Version:	0.2
 " Description:	Maps for opening help on current word with F1 and re-opening
 " 		prior help location with shift-F1
-" Last Change:	2014-06-14
 " License:	Vim License (see :help license)
 " Location:	plugin/help.vim
 " Website:	https://github.com/dahu/vim-help
@@ -67,6 +66,12 @@ nnoremap <plug>LastHelp :call <sid>last_help_jump()<cr>
 
 if !hasmapto('<plug>LastHelp')
   nmap <unique> <s-f1> <plug>LastHelp
+endif
+
+" Commands: {{{1
+
+if exists('g:vimple_version')
+  command! -nargs=0 -bang -bar TopicToClipboard echo help#topic(<q-bang>)
 endif
 
 " Teardown: {{{1
