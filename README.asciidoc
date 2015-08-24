@@ -9,27 +9,37 @@ http://of-vim-and-vigor.blogspot.com/[beverages].
 
 vim-help provides several normal-mode maps to ease navigation within help files.
 
-.Normal Mode Maps Within Help Files
-[caption="",cols="1<m,4<,2>m"]
-|=============================================================================
-|o / O       |Jump to the next/prior option, e.g.: |\'filetype'
-|s / S       |Jump to the next/prior link, e.g.:   |\|vim-help-intro\|
-|t / T       |Jump to the next/prior anchor, e.g.: |\*vim-help-example-tag*
-|q           |Close the current help window        |
-|<enter>     |Follow link under cursor (equivalent to ++ctrl-]++)                   |
-|<backspace> |Jump back a tag (equivalent to ++ctrl-t++)                            |
-|<leader>j/k |Jump to next/prior quickfix entry (equivalent to +:cnext+ / +:cprev+) |
-|<ledaer>q   |Disable all vim-help maps (handy for editing vim help files)          |
-|=============================================================================
+=== Normal Mode Maps Within Help Files
 
-Additionally, vim-help sets the following global maps:
-
-.Global Normal Mode Maps
 [caption="",cols="1<m,4<"]
 |=============================================================================
-|<F1>       | Prepare to open +:help+ on the word under the cursor.
-|<shift-F1> | Jump back to prior help location. 
+|o / O       |Jump to the next/prior option
+|s / S       |Jump to the next/prior link
+|t / T       |Jump to the next/prior anchor
+|q           |Close the current help window
+|<enter>     |Follow link under cursor (equivalent to ++ctrl-]++)
+|<backspace> |Jump back a tag (equivalent to ++ctrl-t++)
+|<leader>j/k |Jump to next/prior quickfix entry (equivalent to +:cnext+ / +:cprev+)
+|<ledaer>q   |Disable all vim-help maps (handy for editing vim help files)
+|=============================================================================
+
+=== Global Normal Mode Maps
+
+[caption="",cols="1<m,4<"]
+|=============================================================================
+|<F1>       | Cycles through terms from current line for :help
+|<shift-F1> | Jump back to prior help location.
 |=============================================================================
 
 NOTE: Jump to prior help location only works if you have
 https://github.com/dahu/MarkMyWords[MarkMyWords] installed.
+
+=== `:TopicToClipboard`
+
+
+The `:TopicToClipboard` command sets the `@*` register with a `:help`
+command to jump to the nearest help tag prior to the current cursor
+position. If that help tag is more than 9 lines away, the help command
+will include an offset to the current cursor line. If you want the
+cursor line offset even though the help tag is less than 10 lines away,
+use `:TopicToClipboard!` instead.

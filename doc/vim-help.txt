@@ -5,8 +5,8 @@
 
 
                                                                 *vim-help*
-vim-help provides several normal-mode maps to ease navigation within
-help files:
+
+Normal-mode maps to ease navigation within help files:
 
 o / O		Jump to the next/prior option, e.g.:	'filetype'
 s / S		Jump to the next/prior link, e.g.:	|vim-help-intro|
@@ -17,11 +17,23 @@ q		Close the current help window
 <leader>j/k	Jump to next/prior quickfix entry (equivalent to |:cnext|)
 <leader>q	Disable all vim-help maps (handy for editing vim help files)
 
+
+                                        *vim-help_<f1>* *vim-help_f1* *F1*
+
 Additionally, vim-help sets the following global maps:
 
-<F1>		Prepare to open :help on the word under the cursor.
+<F1>		Cycles through terms from current line for :help
 <shift-F1>	Jump back to prior help location. NOTE: Only works if you have
 		https://github.com/dahu/MarkMyWords installed.
+
+        *vim-help_TopicToClipboard* *TopicToClipboard* *TopicToClipboard!*
+
+The |:TopicToClipboard| command sets the |@*| register with a |:help|
+command to jump to the nearest help tag prior to the current cursor
+position. If that help tag is more than 9 lines away, the help command
+will include an offset to the current cursor line. If you want the
+cursor line offset even though the help tag is less than 10 lines away,
+use |:TopicToClipboard!| instead.
 
 ==============================================================================
 

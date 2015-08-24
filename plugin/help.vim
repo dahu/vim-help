@@ -17,30 +17,13 @@
 let s:save_cpo = &cpo
 set cpo&vim
 
-if exists("g:loaded_help")
-      \ || v:version < 700
-      \ || &compatible
-  let &cpo = s:save_cpo
-  finish
-endif
+" if exists("g:loaded_help")
+"       \ || v:version < 700
+"       \ || &compatible
+"   let &cpo = s:save_cpo
+"   finish
+" endif
 let g:loaded_help = 1
-
-" Private Functions: {{{1
-
-" Help terms can include characters typically not considered within keywords.
-function! s:expand_help_word()
-  let iskeyword = &iskeyword
-  set iskeyword=!-~,^),^*,^\|,^",192-255
-  let word = expand('<cword>')
-  let &iskeyword = iskeyword
-  return substitute(word, '(\zs.*', '', '')
-endfunction
-
-function! s:last_help_jump()
-  if exists('g:markmywords_version')
-    MMWSelect helpmark
-  endif
-endfunction
 
 " Maps: {{{1
 
@@ -49,20 +32,22 @@ endfunction
 " Moves the cursor to the beginning of the term for contextual markup.
 " (:help help-context)
 
-nnoremap <plug>HelpWord :help <c-r>=<sid>expand_help_word()<cr><c-b><c-right><right>
+nnoremap <plug>HelpWord :help <c-r>=help#expand_help_word()<cr><c-b><c-right><right>
 
 if !hasmapto('<plug>HelpWord')
   nmap <unique> <f1> <plug>HelpWord
+  cmap <unique> <f1> <c-\><c-n><plug>HelpWord
 endif
 
 " If we have https://github.com/dahu/markmywords then shift-F1 jumps to the
 " last help file you were in.  NOTE: Some terminals might need a map for the
 " keycode that <s-f1> generates to the symbolic <s-f1>. For example, in
 " xfce-terminal, that looks like:
-"   map O1;2P <s-f1>
+"   map ^[O1;2P <s-f1>
+" where   ^[01;2P   is generated with    ctrl-v shift-F1
 " Do this in your ~/.vimrc
 
-nnoremap <plug>LastHelp :call <sid>last_help_jump()<cr>
+nnoremap <plug>LastHelp :call help#last_help_jump()<cr>
 
 if !hasmapto('<plug>LastHelp')
   nmap <unique> <s-f1> <plug>LastHelp
