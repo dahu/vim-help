@@ -56,7 +56,8 @@ endif
 " Commands: {{{1
 
 if exists('g:vimple_version')
-  command! -nargs=0 -bang -bar TopicToClipboard echo help#topic(<q-bang>)
+  command! -nargs=0 -bang -bar TopicToClipboard     echo help#topic(<q-bang>)
+  command! -nargs=0 -bang -bar HelpTopicToClipboard echo help#topic(<q-bang>)
 endif
 
 " Teardown: {{{1

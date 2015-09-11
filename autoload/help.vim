@@ -77,7 +77,7 @@ function! help#topic(always_show_distance_from_topic)
   let pos = getpos('.')
   call search(s:topic_pattern, 'bW')
   let tpos = getpos('.')
-  let topics = GetTopicCluster()
+  let topics = help#topic_cluster()
   call setpos('.', pos)
   if len(topics) == 0
     return ''
