@@ -20,7 +20,7 @@ vim-help provides several normal-mode maps to ease navigation within help files.
 |<enter>     |Follow link under cursor (equivalent to ++ctrl-]++)
 |<backspace> |Jump back a tag (equivalent to ++ctrl-t++)
 |<leader>j/k |Jump to next/prior quickfix entry (equivalent to +:cnext+ / +:cprev+)
-|<ledaer>q   |Disable all vim-help maps (handy for editing vim help files)
+|<leader>q   |Disable all vim-help maps (handy for editing vim help files)
 |=============================================================================
 
 === Global Normal Mode Maps
